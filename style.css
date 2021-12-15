@@ -14,6 +14,11 @@
 html{
     font-size: 62.5%;
 }
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* End of commons styles */
 .mouse-circle,
 .mouse-dot{
@@ -28,6 +33,7 @@ html{
     height: 0.4rem;
     background-color: #d5896f;
     animation: mouseDotAnimation 8s infinite linear;
+    pointer-events: none;
 }
 
 /* Mouse Circle */
@@ -36,6 +42,7 @@ html{
     height: 4rem;
     border: 0.1rem solid #70A9A1;
     animation: mouseCircleAnimation 8s infinite linear;
+    pointer-events: none;
     
 } 
 @keyframes mouseCircleAnimation {
@@ -78,3 +85,115 @@ html{
     background-size: cover;
 }
 /* End of page Background */
+
+/* Section 1 */
+.section-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.logo{
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+.description{
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+.circle{
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    background-color: red;
+    align-self: center;
+    justify-self: center;
+    opacity: 0.5;
+}
+.circle-1{
+    background: url(images/landing/university.png) center no-repeat;
+    background-size:contain;
+    background-color: transparent;
+    margin-top: 2%;
+    width: 22rem;
+    height: 22rem;
+    align-self: center;
+    justify-self: center;
+    opacity: 0.7;
+}
+.circle-2{
+    background: url(images/landing/circle-2-img.jpg) center no-repeat;
+    background-size: cover;
+    border: 0.5rem solid #70A9A1;
+    background-clip: content-box;
+}
+.circle-3{
+    background: url(images/landing/circle-3-img.jpg) center no-repeat;
+    background-size: cover;
+    border: 0.5rem solid #70A9A1;
+    background-clip: content-box;
+}
+.circle-4{
+    background: url(images/landing/circle-4-img.jpg) center no-repeat;
+    background-size: cover;
+    border: 0.5rem solid #70A9A1;
+    background-clip: content-box;
+}
+
+.main-circle{
+    width: 55rem;
+    height: 55rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 20%;
+    border: 0.1rem solid #70A9A1;
+    transition: width 0.2s, height 0.2s;
+}
+.main-circle:hover{
+    width:60rem;
+    height:60rem;
+}
+.main-circle img{
+    mix-blend-mode:luminosity;
+    position: relative;
+    margin-top: 55%;
+    left: 0;
+    top: 0;
+    transition: left 2s, top 2s;
+}
+.main-circle img:hover{
+    margin-top: 0;
+    margin-top: 40%;
+}
+.featured-text{
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 2.5;
+}
+.featured-text-1{
+    margin: 0 auto 0 10rem;
+}
+.featured-text-2{
+    margin: 0 10rem 0 auto;
+}
+
+/* End of Section 1 */
