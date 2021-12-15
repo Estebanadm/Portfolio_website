@@ -101,7 +101,7 @@ html{
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #3F0505;
+    color: #a1a1a1;
     margin: 0 2.5rem;
     z-index: 100;
 }
@@ -119,7 +119,7 @@ html{
     left: 5rem;
     font-size: 3rem;
     text-transform: uppercase;
-    color: #3F0505 ;
+    color: #a1a1a1 ;
 }
 .description{
     position: absolute;
@@ -127,13 +127,14 @@ html{
     left: 5rem;
     font-size: 1.8rem;
     text-transform: uppercase;
-    color: #3F0505;
+    color: #a1a1a1;
 }
 .universityLogo{
     background: url(images/landing/university.png) center no-repeat;
     background-size:contain;
     background-color: transparent;
     margin-top: 2%;
+    margin-left: 20%;
     width: 22rem;
     height: 22rem;
     align-self: center;
@@ -169,3 +170,66 @@ html{
 }
 
 /* End of Section 1 */
+
+/* About me page */
+.section-2{
+    padding:10rem 10rem 15rem 10rem;
+}
+/* About me page end*/
+/* About Me txt */
+.about-me-text{
+    width: 80%;
+    margin: auto;
+}
+.about-me-text span{
+    font-family: "Poppins",sans-serif;
+    font-size: 2rem;
+    font-weight:normal;
+    color: rgba(252, 248, 248, 0.425);
+    letter-spacing: 0.5rem;
+    line-height: 1.2;
+    text-shadow: 0 0 0.2rem #f1f7fc;
+    position: relative;
+    mix-blend-mode: color-dodge;
+}
+@keyframes aboutMeTextAnim {
+    0%{
+        color: #fff;
+        top: 0;
+    }
+    10%,
+    90%{
+        color: #a1a1a1;
+        top: 0.1rem;
+    }
+    100%{
+        color: #fff;
+        top: 0;
+    }
+}
+/* About Me txt */
+.circles{
+    position: relative;
+    top: -10rem;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    color: #3F0505;
+}
+.circle{
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    background-color: red;
+    align-self: center;
+    justify-self: center;
+    opacity: 0.5;
+}
+.circle-2{
+    background: url(images/landing/AboutMe.jpg) center no-repeat;
+    background-size: cover;
+    border: 0.5rem solid #70A9A1;
+    background-clip: content-box;
+}
+
