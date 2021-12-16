@@ -255,6 +255,7 @@ html{
 .contactMeHeader{
     position:relative;
     height: 100vh;
+    flex-direction: column;
 }
 
 .form-heading{
@@ -292,4 +293,35 @@ html{
     border: none;
     align-self: flex-start;
     font-size: 1.8;
+}
+/* Comments for social media icons */
+.slideshow{
+    display: flex;
+    width: 50rem;
+    margin-top: 10rem;
+    padding: 2 2rem;
+}
+.slideshow-link{
+    width: 20%;
+    filter: brightness(0.5);
+    transition: filter 1.5s;
+}
+.slideshow-link:nth-child(1),
+.slideshow-link:nth-child(5){
+    transition: width 0.5s , opacity 0.5s;
+}
+.slideshow-link:nth-child(3){
+    transition: filter 0.5s;
+}
+
+.slideshow-link img{
+    width: 100%;
+    padding: 0 1rem;
+}
+.faded-out{
+    opacity:0;
+    width:0;
+}
+.light{
+    filter:brightness(2);
 }

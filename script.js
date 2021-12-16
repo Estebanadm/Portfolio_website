@@ -67,14 +67,38 @@ const formInputs= document.querySelectorAll(".contact-form-input");
 console.info(formInputs);
 
 formInputs.forEach((input)=>{
-    // formHeading.style.opacity="0";
-    console.info(input);
     input.addEventListener('focus',()=>{
+        formHeading.style.opacity="0";
         setTimeout(()=>{
             formHeading.textContent=`Your ${input.placeholder}`;
             formHeading.style.opacity=1;
         },300);
     },true);
 });
+formInputs.forEach((input)=>{
+    input.addEventListener('blur',()=>{
+        formHeading.style.opacity="0";
+        setTimeout(()=>{
+            formHeading.textContent="Let's Talk";
+            formHeading.style.opacity=1;
+        },300);
+    },true);
+});
+// slideshow icons
+const slideshow= document.querySelector(".slideshow")
 
+setInterval(()=>{
+    const firstIcon= slideshow.firstElementChild;
+    firstIcon.classList.add("faded-out");
+    const thirdIcon=slideshow.children[3];
+    thirdIcon.classList.add("light");
+    thirdIcon.previousElementSibling.classList.remove("light");
+    setTimeout(()=>{
+        slideshow.removeChild(firstIcon);
+        slideshow.appendChild(firstIcon);
+        setTimeout(()=>{
+            firstIcon.classList.remove("faded-out");
+        },500)
+    },500)
+},3000)
 
