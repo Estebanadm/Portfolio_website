@@ -86,19 +86,67 @@ formInputs.forEach((input)=>{
 });
 // slideshow icons
 const slideshow= document.querySelector(".slideshow")
-
-setInterval(()=>{
-    const firstIcon= slideshow.firstElementChild;
-    firstIcon.classList.add("faded-out");
-    const thirdIcon=slideshow.children[3];
-    thirdIcon.classList.add("light");
-    thirdIcon.previousElementSibling.classList.remove("light");
-    setTimeout(()=>{
-        slideshow.removeChild(firstIcon);
-        slideshow.appendChild(firstIcon);
+if(slideshow){
+    setInterval(()=>{
+        const firstIcon= slideshow.firstElementChild;
+        firstIcon.classList.add("faded-out");
+        const thirdIcon=slideshow.children[3];
+        thirdIcon.classList.add("light");
+        thirdIcon.previousElementSibling.classList.remove("light");
         setTimeout(()=>{
-            firstIcon.classList.remove("faded-out");
+            slideshow.removeChild(firstIcon);
+            slideshow.appendChild(firstIcon);
+            setTimeout(()=>{
+                firstIcon.classList.remove("faded-out");
+            },500)
         },500)
-    },500)
-},3000)
+    },3000)
+}
 
+const form=document.querySelector('.contact-form');
+const username=document.getElementById('name');
+const email=document.getElementById('email');
+const subject=document.getElementById('subject');
+const message=document.getElementById('message');
+const messages= document.querySelectorAll(".message");
+
+const succes=(input)=>{
+    input.nextElementSibling.classList.remove("error");
+}
+const error=(input,message)=>{
+    input.nextElementSibling.classList.add("error");
+    input.nextElementSibling.textContent=message;
+}
+const checkRequiredFields=(inputArr)=>{
+    inputArr.forEach(input=>{
+        if(input.value.trim()===""){
+            error(input,`${input.id} is required`)
+        }
+    })
+}
+const checkemail=(input)=>{
+    const regEx= /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(regEx.test(input.value.trim())){
+        succes(input);
+    }else{
+        error(input,"Email is not valit");
+    }
+}
+const checkLength=(input,min)=>{
+    if(input.value.trim().length<min){
+        error(input,`${input.id} must be at least ${min} characters`)
+    }else{
+        succes(input);
+    }
+};
+if(form){
+    form.addEventListener("submit",e=>{
+        e.preventDefault();
+        checkLength(username,3);
+        checkLength(subject,3);
+        checkLength(message,20);
+        checkemail(email);
+        checkRequiredFields([username,email,subject,message]);
+        
+    });
+}

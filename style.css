@@ -265,6 +265,7 @@ html{
     color: #3F0505;
     letter-spacing: 0.3rem;
     margin-bottom: 3rem;
+    margin-top: 5rem;
     transition: opacity 0.3s;
 }
 .contact-form{
@@ -293,6 +294,23 @@ html{
     border: none;
     align-self: flex-start;
     font-size: 1.8;
+    padding-left: 0.5rem;
+}
+.message{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3F0505;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin: 0 auto 1rem 0;
+    padding-left: 0.5rem;
+    visibility: hidden;
+    opacity:0;
+}
+.error.message{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
 /* Comments for social media icons */
 .slideshow{
@@ -324,4 +342,30 @@ html{
 }
 .light{
     filter:brightness(2);
+}
+
+/* Making page responsive */
+@media(max-width: 1500px){
+    .main-circle{
+        width: 45rem;
+        height: 45rem;
+    }
+    .main-circle:hover{
+        width: 55rem;
+        height: 55rem;
+    }
+    .main-circle img{
+        width: 160%;
+        height: 160%;
+    }
+    .about-me-text span{
+        font-size: 1rem;
+    }
+    .universityLogo{
+        width: 15rem;
+        height: 15rem;
+    }
+    .navbar-link{
+        font-size: 1.8rem;
+    }
 }
