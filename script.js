@@ -141,12 +141,14 @@ const checkLength=(input,min)=>{
 };
 if(form){
     form.addEventListener("submit",e=>{
-        e.preventDefault();
         checkLength(username,3);
         checkLength(subject,3);
         checkLength(message,20);
         checkemail(email);
         checkRequiredFields([username,email,subject,message]);
-        
+        const notValid=Array.from(messages).find((message)=>{
+            return message.classList.contains("error")
+        });
+        notValid&&e.preventDefault();
     });
 }
