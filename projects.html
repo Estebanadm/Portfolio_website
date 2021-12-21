@@ -28,7 +28,7 @@
         </div>
         <!-- Projects -->
           <a href="https://github.com/Estebanadm" class="sourceText">
-            <!-- <img src="/images/social-icons/slideshow-img-1.png"/> -->
+            <img src="/images/social-icons/slideshow-img-1.png" class="sourceLogo"/>
             <h1>Source Code</h1>
           </a>
         <br><br><br><br><br><br><br><br>
@@ -48,8 +48,24 @@
           <!-- End of Project Hide Button -->
           <!-- End of Projects -->
     </div>
+    <script>
+      (function()
+    {
+      if( window.localStorage )
+      {
+        if( !localStorage.getItem('firstLoad') )
+        {
+          localStorage['firstLoad'] = true;
+          window.location.reload();
+        }  
+        else
+          localStorage.removeItem('firstLoad');
+      }
+    })();
+    </script>
+    <script src="script.js">
     
-    <script src="script.js"></script>
+    </script>
 
 </body>
 </html>
