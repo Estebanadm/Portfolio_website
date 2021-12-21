@@ -253,6 +253,7 @@ html{
   /* Projects */
   .projects {
     flex-wrap: wrap;
+    padding-top: 3%;
     padding-bottom: 15rem;
   }
   
@@ -382,6 +383,15 @@ html{
     transform: scale(1);
     visibility: visible;
     transition: transform 0.5s;
+  }
+  .sourceText{
+    position: absolute;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding-top: 5%;
+    padding-left: 10%;
+    color: #a1a1a1;
+    text-decoration: underline;
   }
   
 
